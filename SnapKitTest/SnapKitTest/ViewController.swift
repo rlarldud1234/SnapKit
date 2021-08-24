@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  snapkitTests
+//  SnapKitTest
 //
-//  Created by 김기영 on 2021/08/21.
+//  Created by 김기영 on 2021/08/24.
 //
 
 import UIKit
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
     }
     
     let loginBtn = UIButton().then {
-        $0.backgroundColor = .green
+        $0.backgroundColor = UIColor.init(named: "Color")
         $0.setTitle("로그인", for: .normal)
         $0.setTitleColor(.white, for: .normal)
         $0.layer.borderWidth = 0.5
@@ -151,6 +151,7 @@ class ViewController: UIViewController {
 }
 
 
+
 #if DEBUG
 import SwiftUI
 struct ViewControllerRepresentable: UIViewControllerRepresentable {
@@ -175,3 +176,4 @@ struct ViewControllerRepresentable_PreviewProvider: PreviewProvider {
         
     }
 } #endif
+

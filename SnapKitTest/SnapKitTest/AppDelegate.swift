@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  snapkitTests
+//  SnapKitTest
 //
-//  Created by 김기영 on 2021/08/21.
+//  Created by 김기영 on 2021/08/24.
 //
 
 import UIKit
