@@ -20,15 +20,17 @@ class ViewController: UIViewController {
         $0.textColor = .black
         $0.font = UIFont.systemFont(ofSize: 40, weight: .bold)
     }
+    
     let titleLabel2 = UILabel().then {
         $0.text = "물어볼램"
         $0.textColor = .black
-        $0.font = UIFont.systemFont(ofSize: 40, weight:     .bold)
+        $0.font = UIFont.systemFont(ofSize: 40, weight: .bold)
     }
     
     let idField = UITextField().then {
+        $0.addLeftPadding()
         $0.textColor = .black
-        $0.backgroundColor = .lightGray
+        $0.backgroundColor = UIColor.init(named: "FeildColor")
         $0.placeholder = " 아이디를 입력해주세요."
         $0.layer.borderWidth = 0.5
         $0.layer.cornerRadius = 0
@@ -36,8 +38,9 @@ class ViewController: UIViewController {
     }
     
     let psField = UITextField().then {
+        $0.addLeftPadding()
         $0.textColor = .black
-        $0.backgroundColor = UIColor(red: 240/250, green: 241/250, blue: 241/250, alpha: 1)
+        $0.backgroundColor = UIColor.init(named: "FeildColor")
         $0.placeholder = " 비밀번호를 입력해주세요."
         $0.layer.borderColor = UIColor.black.cgColor
         $0.layer.borderWidth = 0.5
@@ -46,10 +49,14 @@ class ViewController: UIViewController {
     
     let idDeleteBtn = UIButton().then {
         $0.setImage(UIImage(systemName: "xmark.circle"), for: .normal)
+        $0.tintColor = .black
     }
+    
     let psDeleteBtn = UIButton().then {
         $0.setImage(UIImage(systemName: "xmark.circle"), for: .normal)
+        $0.tintColor = .black
     }
+    
     let errorLabel = UILabel().then {
         $0.text = "아이디나 비밀번호가 알맞지 않습니다."
         $0.textColor = .red
@@ -66,6 +73,7 @@ class ViewController: UIViewController {
     let loginBtn = UIButton().then {
         $0.backgroundColor = UIColor.init(named: "Color")
         $0.setTitle("로그인", for: .normal)
+        $0.titleLabel?.font = UIFont(name: "나눔고딕 Bold", size: 30)
         $0.setTitleColor(.white, for: .normal)
         $0.layer.borderWidth = 0.5
         $0.layer.borderColor = UIColor.black.cgColor
@@ -76,7 +84,7 @@ class ViewController: UIViewController {
     let signUpBtn = UIButton().then {
         $0.backgroundColor = .white
         $0.setTitle("Gram", for: .normal)
-        $0.setTitleColor(.blue, for: .normal)
+        $0.setTitleColor(UIColor.init(named: "SignUpFontColor"), for: .normal)
     }
     
     func setUpView() {
@@ -149,7 +157,13 @@ class ViewController: UIViewController {
         }
     }
 }
-
+extension UITextField {
+  func addLeftPadding() {
+    let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: self.frame.height))
+    self.leftView = paddingView
+    self.leftViewMode = ViewMode.always
+  }
+}
 
 
 #if DEBUG
